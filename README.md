@@ -59,10 +59,11 @@
   </pre>
   <li>Execute o projeto:</li>
   <pre>
-    <code>npm start</code>
+    <code>npm run dev</code>
   </pre>
-  <li>Acesse o projeto em <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>.</li>
+  <li>Acesse o projeto em <a href="http://localhost:5173" target="_blank">http://localhost:5173</a>.</li>
 </ol>
+
 
 ---
 
@@ -86,5 +87,7 @@ src/
 <p>Este projeto está sob a licença MIT. Veja o arquivo <a href="https://github.com/JeffersonAlvesB/celia-portfolio/blob/main/LICENSE" target="_blank">LICENSE</a> para mais informações.</p>
 
 ---
+
+
 
 
