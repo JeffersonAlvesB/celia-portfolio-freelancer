@@ -1,0 +1,197 @@
+:root {
+    --corFonteTopo: #fff;
+    --corLua: #e0d3d3;
+    --corSol: #333;
+    --corBgLua: #333;
+    --corBgSol: #e0d3d3;
+    --corFundoTopo: #0e0e0e;
+}
+
+[data-theme="light"] {
+    --corFonteTopo: black;
+    --corFundoTopo: #aba0a0;
+}
+
+.container_header {
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--corFundoTopo);
+}
+
+.container_width {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    margin: 0 3%;
+}
+
+.logo {
+    width: 100px;
+    object-fit: cover;
+}
+
+.nav_link {
+    position: relative;
+}
+
+.container_links {
+    display: flex;
+    gap: 3rem;
+}
+
+.lista_links {
+    list-style: none;
+}
+
+.links {
+    color: var(--corFonteTopo);
+    text-decoration: none;
+    transition: 500ms;
+    display: inline-block;
+}
+
+.links:hover {
+    transform: scale(1.3);
+    font-size: 900;
+}
+
+.container_mode {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ipt_mode {
+    position: absolute;
+    opacity: 0;
+}
+
+.sun {
+    background-color: var(--corBgSol);
+    padding: 0.5rem;
+    border-radius: 50%;
+    position: absolute;
+    font-size: 3.5rem;
+    color: var(--corSol);
+    transform: scale(0);
+    transition: 1s ease;
+}
+
+.ipt_mode:checked ~ .sun {
+    transition-delay: 0.8s;
+    transform: scale(1) rotate(360deg);
+    background-color: var(--corBgSol);
+}
+
+.moon {
+    background-color: var(--corBgLua);
+    padding: 0.5rem;
+    border-radius: 50%;
+    font-size: 3.5rem;
+    color: var(--corLua);
+    transition: 1s ease;
+    transition-delay: 0.8s;
+}
+
+.ipt_mode:checked ~ .moon {
+    transition-delay: 0s;
+    transform: rotate(360deg) scale(0);
+    background-color: var(--corBgLua);
+}
+
+.toggle {
+    position: absolute;
+    display: block;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    z-index: -1;
+    transition: 1s;
+}
+
+.menu_icon {
+    display: none;
+    height: 60px;
+    z-index: 3;
+}
+.menu_linha {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+.menu_linha span {
+    display: block;
+    height: 6px;
+    width: 53px;
+    margin-bottom: 10px;
+    position: relative;
+    background: var(--corFonteTopo);
+    border-radius: 50px;
+    z-index: 1;
+    transition: transform 0.5s ease-out, opacity 0.2s ease-out;
+}
+.menu_linha span:last-child {
+    margin-bottom: 0;
+}
+.menu_linha.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+.menu_linha.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu_linha.active span:nth-child(3) {
+    transform: translateY(-20px) rotate(-45deg);
+}
+
+@media screen and (max-width: 900px) {
+    .logo {
+        width: 70px;
+    }
+
+    .nav_link {
+        position: absolute;
+    }
+
+    .container_links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+        transition: 0.5s;
+        background-color: var(--corFundoTopo);
+        z-index: 2;
+    }
+
+    .container_links.open {
+        transform: translateX(0);
+    }
+
+    .links {
+        font-size: 1.2rem;
+    }
+
+    .menu_icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

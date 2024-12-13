@@ -1,0 +1,127 @@
+:root {
+    --corAmarelada: #ffca10;
+    --corAmareladaHover: #a48410;
+    --corFonteInicio: #fff;
+    --corFundoInicio: #000;
+}
+
+[data-theme="light"] {
+    --corFonteInicio: #000;
+    --corFundoInicio: #f5f5f5;
+}
+
+.container_inicio {
+    background-color: var(--corFundoInicio);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container_width {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 3%;
+    padding: 110px 0;
+}
+
+.container_textos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--corFonteInicio);
+    max-width: 500px;
+    width: 100%;
+}
+
+.titulo {
+    color: var(--corFonteInicio);
+    font-size: 3.5rem;
+}
+
+.profissao {
+    font-size: 1.5rem;
+    color: var(--corAmarelada);
+    display: flex;
+    gap: 1rem;
+}
+
+.icons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.paragrafo {
+    color: var(--corFonteInicio);
+}
+
+.enfase {
+    color: var(--corAmarelada);
+    text-transform: uppercase;
+}
+
+.perfil_foto {
+    width: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 5px var(--corAmarelada);
+    animation: flutuar 2s ease-in-out infinite alternate;
+    position: relative;
+}
+
+@keyframes flutuar {
+    0% {
+        top: -5px;
+    }
+    100% {
+        top: 5px;
+    }
+}
+
+.contato {
+    width: fit-content;
+    padding: 0.5rem 2rem;
+    font-size: 1.2rem;
+    background-color: var(--corAmarelada);
+    color: black;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 500ms;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contato:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 0px var(--corAmarelada);
+}
+
+@media screen and (max-width: 900px) {
+    .container_width {
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+
+    .container_textos {
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .titulo {
+        font-size: 2.5rem;
+    }
+
+    .profissao {
+        font-size: 1.2rem;
+    }
+
+    .perfil_foto {
+        width: 200px;
+    }
+}

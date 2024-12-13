@@ -1,0 +1,121 @@
+:root {
+    --corAmarelada: #ffca10;
+    --corAmareladaHover: #a48410;
+    --corAmareladaActive: #836909;
+    --corFundoContato: #131313;
+    --corFonteContato: #fff;
+    --corFundoInput: #242424;
+}
+
+[data-theme="light"] {
+    --corFonteContato: #000;
+    --corFundoContato: #ececec;
+    --corFundoInput: #dbdbdb;
+}
+
+.container_contato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--corFundoContato);
+}
+
+.container_width {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 3%;
+    padding: 100px 0;
+}
+
+.titulo {
+    font-size: 3.5rem;
+    color: var(--corFonteContato);
+    text-align: center;
+}
+
+.container_ipts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    align-items: center;
+}
+
+.inputs_textos,
+.form_textarea {
+    width: 100%;
+    background-color: var(--corFundoInput);
+    border: 0;
+    outline: 0;
+    padding: 1.25rem 0.8rem;
+    border-radius: 15px;
+    color: var(--corFonteContato);
+    font-size: 1.1rem;
+}
+
+.inputs_textos:focus,
+.form_textarea:focus {
+    outline: 1px solid var(--corAmarelada);
+}
+
+.form_textarea {
+    resize: none;
+}
+
+.input_submit {
+    font-size: 1.5rem;
+    background-color: var(--corAmarelada);
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: 500ms;
+}
+
+.input_submit:hover {
+    background-color: var(--corAmareladaHover);
+}
+
+.input_submit:active {
+    background-color: var(--corAmareladaActive);
+}
+
+.Modal {
+    position: fixed;
+    bottom: 10px;
+    animation: modalEnter 0.4s ease-out;
+    padding: 0 0.5rem;
+}
+
+@keyframes modalEnter {
+    from {
+        transform: translateY(-50%) scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .titulo {
+        font-size: 2.5rem;
+    }
+
+    .inputs_textos,
+    .form_textarea {
+        font-size: 1rem;
+    }
+
+    .input_submit {
+        font-size: 1.2rem;
+    }
+    .Modal {
+        top: 120px;
+    }
+}
